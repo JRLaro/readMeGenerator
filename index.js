@@ -45,7 +45,7 @@ const questions = [
             'MIT',
             'GPLv2',
             'Apache',
-            'BSD 3-clause'
+            'Unlicensed'
         ]
     },
 ];
@@ -59,10 +59,8 @@ function writeToFile(data) {
 function start() {
     inquirer.prompt(questions)
         .then((data) => {
-            writeToFile(generateMarkdown(data));
             console.log("Just a moment while we generate your ReadMe...");
-            writeToFile('readMe.md', generateMarkdown)
-            console.log(data);
+            writeToFile(generateMarkdown(data));
         });
 }
 start()
